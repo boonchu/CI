@@ -29,4 +29,5 @@ project, including configuration, build, internationalization, help files, etc.
 * Thu Jul 07 2011 The Coon of Ty <Ty@coon.org> - 2.8-1
 - Initial version of the package
 ```
+* per discussion, I prefer custom rpmbuild home folder. This is how to [setup](http://stackoverflow.com/questions/416983/why-is-topdir-set-to-its-default-value-when-rpmbuild-called-from-tcl)
 
