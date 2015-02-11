@@ -1,0 +1,13 @@
+echo "current rpm environment"
+RPMDIR=`rpm --eval "%{_rpmdir}"` && echo "RPMDIR=$RPMDIR"
+SRCDIR=`rpm --eval "%{_sourcedir}"` && echo "SRCDIR=$SRCDIR"
+SPECDIR=`rpm --eval "%{_specdir}"` && echo "SPECDIR=$SPECDIR"
+SRPMDIR=`rpm --eval "%{_srcrpmdir}"` && echo "SRPMDIR=$SRPMDIR"
+BUILDDIR=`rpm --eval "%{_builddir}"` && echo "BUILDDIR=$BUILDDIR"
+echo "switch over rpm environment"
+RPM_HOME=$HOME/CI/components/hello
+export RPMDIR="$RPM_HOME/RPMS" && echo "RPMDIR=$RPM_HOME/RPMS"
+export SRCDIR="$RPM_HOME/SOURCES" && echo "SRCDIR=$RPM_HOME/SOURCES"
+export SPECDIR="$RPM_HOME/SPECS" && echo "SPECDIR=$RPM_HOME/SPECS"
+export SRPMDIR="$RPM_HOME/SRPM" && echo "SRPMDIR=$RPM_HOME/SRPMS"
+export BUILDDIR="$RPM_HOME/BUILD" && echo "BUILDDIR=$RPM_HOME/BUILD"
