@@ -30,4 +30,8 @@ project, including configuration, build, internationalization, help files, etc.
 - Initial version of the package
 ```
 * per discussion, I prefer custom rpmbuild home folder. This is how to [setup](http://stackoverflow.com/questions/416983/why-is-topdir-set-to-its-default-value-when-rpmbuild-called-from-tcl)
+```
+$ rpmbuild --define "_topdir rpmbuild" rpmbuild/SPECS/hello.spec
+```
+
 
