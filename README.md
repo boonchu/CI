@@ -99,7 +99,9 @@ fi
   - part of macro in rpm 4.x, you need to turn off feature to avoid problem during the build process [ turn off the Fascist build polic](http://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch09s05s07.html)
 ```
 $ sudo yum install gcc (dependency package by hello rpmbuild)
-$ rpmbuild --define "_topdir $HOME/CI/components/hello" --define "_unpackaged_files_terminate_build 0" -ba SPECS/hello.spec
+$ rpmbuild --define "_topdir $HOME/CI/components/hello" \
+ --define "_unpackaged_files_terminate_build 0" \
+ -ba SPECS/hello.spec
 ```
 * use rpmlint to inspect the output. (should be bare minimum set of warnings)
 ```
