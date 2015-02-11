@@ -133,3 +133,6 @@ bigchoo@vmk1 1359 $ tree
 
 ###### Start with jenkins
 ![jenkins](https://github.com/boonchu/CI/blob/master/components/jenkins.png)
+* suggestions:
+  - Jenkins requires very good performance of hardware to run jobs on executors. It depends on demands of your user environments in your company. 
+ 
