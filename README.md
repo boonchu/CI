@@ -133,6 +133,11 @@ bigchoo@vmk1 1359 $ tree
 
 ##### Building rpm with [mock](http://fedoraproject.org/wiki/Projects/Mock)
 * download from this EPEL fedora, [link](http://dl.fedoraproject.org/pub/epel/6/x86_64/repoview/mock.html)
+```
+$ mock --define "_unpackaged_files_terminate_build 0" SRPMS/hello-2.8-1.src.rpm
+```
+* mock is super cool. just download the soruce rpm and build and test it. 
+* can instruct mock to build based on other OS version.
 
 ##### Start with jenkins
 ![jenkins](https://github.com/boonchu/CI/blob/master/components/jenkins.png)
