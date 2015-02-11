@@ -132,3 +132,4 @@ bigchoo@vmk1 1359 $ tree
   - jenkins is the one of automation tool that engineer can deploy job, run unit testing, etc.
 
 ###### Start with jenkins
+![jenkins](https://github.com/boonchu/CI/blob/master/components/jenkins.png)
