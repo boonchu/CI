@@ -146,7 +146,7 @@ $ rpmbuild --define "_topdir $HOME/CI/components/hello" \
 --clean -bs SPECS/hello.spec --nodeps
 
 $ sudo mock --define "_unpackaged_files_terminate_build 0" \
---resultdir=/tmp/hello \
+--resultdir=/tmp/hello rebuild \
 SRPMS/hello-2.8-1.src.rpm
 
 $ tree /tmp/hello
