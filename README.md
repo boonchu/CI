@@ -162,8 +162,9 @@ $ tree /tmp/hello
 
 ##### Start with jenkins
 ![jenkins](https://github.com/boonchu/CI/blob/master/components/jenkins.png)
-* suggestions:
+* Suggestions:
   - Jenkins requires very good performance of hardware to run jobs on executors. It depends on demands of your user environments in your company. 
+* install git plugins (Manage Jenkins -> Manage Plugins)
 
 ##### Start with artifactory
 * install JDK 7
