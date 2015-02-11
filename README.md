@@ -141,11 +141,15 @@ $ sudo yum install mock
 ```
 * run default to build with mock and investigate from temp folder.
 ```
+$ rpmbuild --define "_topdir $HOME/CI/components/hello" \
+--define "_unpackaged_files_terminate_build 0" \
+--clean -bs SPECS/hello.spec --nodeps
+
 $ sudo mock --define "_unpackaged_files_terminate_build 0" \
 --resultdir=/tmp/hello \
 SRPMS/hello-2.8-1.src.rpm
 
-bigchoo@vmk1 1559 $ tree /tmp/hello
+$ tree /tmp/hello
 /tmp/hello
 ├── build.log
 ├── hello-2.8-1.src.rpm
