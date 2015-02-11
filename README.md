@@ -137,9 +137,19 @@ bigchoo@vmk1 1359 $ tree
 $ sudo yum-config-manager --enable --add-repo=http://dl.fedoraproject.org/pub/epel/7/x86_64
 $ sudo yum install mock
 ```
-* run default to build with mock.
+* run default to build with mock and investigate from temp folder.
 ```
-$ mock --define "_unpackaged_files_terminate_build 0" SRPMS/hello-2.8-1.src.rpm
+$ mock --define "_unpackaged_files_terminate_build 0" \
+--resultdir=/tmp/hello \
+SRPMS/hello-2.8-1.src.rpm
+
+bigchoo@vmk1 1559 $ tree /tmp/hello
+/tmp/hello
+├── build.log
+├── hello-2.8-1.src.rpm
+├── hello-debuginfo-2.8-1.x86_64.rpm
+├── root.log
+└── state.log
 ```
 * mock is super cool. just download the soruce rpm and build and test it. 
 * can instruct mock to build based on other OS version.
