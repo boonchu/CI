@@ -8,11 +8,15 @@ Continueous Integration Process
 ```
 sudo yum install rpmdevtools
 rpmdev-setuptree
-cd rpmbuild/SOURCES && wget wget http://ftp.gnu.org/gnu/hello/hello-2.8.tar.gz
-cd rpmbuild/SPECS && rpmdev-newspec hello
+rsync -av ~/rpmbuild/* ~/CI/components/hello
+cd ~/CI/components
+cd hello/SOURCES && wget http://ftp.gnu.org/gnu/hello/hello-2.8.tar.gz
+cd ~/CI/components
+cd hello/SPECS && rpmdev-newspec hello
 ```
 * edit hello.spec in SPECS folder
 ```
+$ vim ~/CI/components/hello/SPECS/hello.spec
 Name:     hello
 Version:  2.8
 Release:  1
@@ -31,37 +35,31 @@ project, including configuration, build, internationalization, help files, etc.
 ```
 * per discussion, I prefer custom rpmbuild home folder. This is how to [setup](http://stackoverflow.com/questions/416983/why-is-topdir-set-to-its-default-value-when-rpmbuild-called-from-tcl)
 ```
-$ rpmbuild --define "_topdir rpmbuild" rpmbuild/SPECS/hello.spec
+$ cd ~/CI/components/hello
+$ rpmbuild --define "_topdir $HOME/CI/components/hello" -ba SPECS/hello.spec
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/bigchoo/CI/components/hello/BUILDROOT/hello-2.8-1.x86_64
+Wrote: /home/bigchoo/CI/components/hello/SRPMS/hello-2.8-1.src.rpm
+Executing(%clean): /bin/sh -e /var/tmp/rpm-tmp.yZsvBe
++ umask 022
++ cd /home/bigchoo/CI/components/hello/BUILD
++ /usr/bin/rm -rf /home/bigchoo/CI/components/hello/BUILDROOT/hello-2.8-1.x86_64
++ exit 0llo.spec
 ```
 * output example of directory structure
 ```
-bigchoo@vmk1 1051 $ tree
+bigchoo@vmk1 1243 $ tree
 .
-└── rpmbuild
-    ├── BUILD
-    ├── BUILDROOT
-    ├── rpmbuild
-    │   ├── BUILD
-    │   ├── BUILDROOT
-    │   ├── RPMS
-    │   ├── SOURCES
-    │   ├── SPECS
-    │   └── SRPMS
-    ├── RPMS
-    ├── SOURCES
-    │   └── hello-2.8.tar.gz
-    ├── SPECS
-    │   ├── hello.spec
-    │   └── rpmbuild
-    │       ├── BUILD
-    │       ├── BUILDROOT
-    │       ├── RPMS
-    │       ├── SOURCES
-    │       ├── SPECS
-    │       └── SRPMS
-    └── SRPMS
+├── BUILD
+├── BUILDROOT
+├── RPMS
+├── SOURCES
+│   └── hello-2.8.tar.gz
+├── SPECS
+│   └── hello.spec
+└── SRPMS
+    └── hello-2.8-1.src.rpm
 
-21 directories, 2 files
+6 directories, 3 files
 ```
 
 
