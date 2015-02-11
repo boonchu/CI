@@ -159,4 +159,25 @@ bigchoo@vmk1 1559 $ tree /tmp/hello
 ![jenkins](https://github.com/boonchu/CI/blob/master/components/jenkins.png)
 * suggestions:
   - Jenkins requires very good performance of hardware to run jobs on executors. It depends on demands of your user environments in your company. 
- 
+
+##### Start with artifactory
+* install JDK 7
+* download free trail version from artifactory site and install it.
+```
+$ sudo systemctl start artifactory 
+$ sudo systemctl enable artifactory
+$ sudo systemctl status artifactory -l
+$ sudo /opt/jfrog/artifactory/bin/artifactoryctl check
+Artifactory is running, on pid=7704
+$ tail -f /var/opt/jfrog/artifactory/logs/artifactory.log
+2015-02-11 14:00:07,481 [art-init] [INFO ] (o.a.s.ArtifactoryApplicationContext:222) - Initializing org.artifactory.repo.cleanup.InternalArtifactCleanupService
+2015-02-11 14:00:07,489 [art-init] [INFO ] (o.a.s.ArtifactoryApplicationContext:222) - Initializing org.artifactory.storage.InternalStorageService
+2015-02-11 14:00:07,491 [art-init] [INFO ] (o.a.c.ConvertersManagerImpl:113) - Updating local file data/artifactory.properties to running version
+2015-02-11 14:00:07,553 [art-init] [INFO ] (o.a.s.ArtifactoryApplicationContext:361) - Artifactory application context is ready.
+2015-02-11 14:00:07,553 [art-init] [INFO ] (o.a.c.ConvertersManagerImpl:148) - Sending configuration update message to slaves
+2015-02-11 14:00:07,555 [art-init] [INFO ] (o.a.w.s.ArtifactoryContextConfigListener:225) -
+###########################################################
+### Artifactory successfully started (18.060 seconds)   ###
+###########################################################
+```
+* access from web service http://localhost:8081/
