@@ -101,17 +101,9 @@ fi
 $ sudo yum install gcc (dependency package by hello rpmbuild)
 $ rpmbuild --define "_topdir $HOME/CI/components/hello" --define "_unpackaged_files_terminate_build 0" -ba SPECS/hello.spec
 ```
-* use rpmlint to inspect the output
+* use rpmlint to inspect the output. (should be bare minimum set of warnings)
 ```
-$ rpmlint SPECS/hello.spec SRPMS/hello* RPMS/*/hello*
-SPECS/hello.spec:43: W: macro-in-comment %{_mandir}
-SPECS/hello.spec:44: W: macro-in-comment %{_infodir}
-SPECS/hello.spec:44: W: macro-in-comment %{name}
-SPECS/hello.spec:45: W: macro-in-comment %{_bindir}
-hello.src:43: W: macro-in-comment %{_mandir}
-hello.src:44: W: macro-in-comment %{_infodir}
-hello.src:44: W: macro-in-comment %{name}
-hello.src:45: W: macro-in-comment %{_bindir}
+bigchoo@vmk1 1331 $ rpmlint SPECS/hello.spec SRPMS/hello* RPMS/*/hello*
 hello-debuginfo.x86_64: W: only-non-binary-in-usr-lib
-2 packages and 1 specfiles checked; 0 errors, 9 warnings.
+2 packages and 1 specfiles checked; 0 errors, 1 warnings.
 ```
