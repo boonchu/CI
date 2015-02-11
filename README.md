@@ -132,6 +132,7 @@ bigchoo@vmk1 1359 $ tree
   - jenkins is the one of automation tool that engineer can deploy job, run unit testing, etc.
 
 ##### Building rpm with [mock](http://fedoraproject.org/wiki/Projects/Mock)
+* [mock manual](http://linux.die.net/man/1/mock)
 * Use EPEL fedora with RHEL 7
 ```
 $ sudo yum-config-manager --enable --add-repo=http://dl.fedoraproject.org/pub/epel/7/x86_64
@@ -139,7 +140,7 @@ $ sudo yum install mock
 ```
 * run default to build with mock and investigate from temp folder.
 ```
-$ mock --define "_unpackaged_files_terminate_build 0" \
+$ sudo mock --define "_unpackaged_files_terminate_build 0" \
 --resultdir=/tmp/hello \
 SRPMS/hello-2.8-1.src.rpm
 
