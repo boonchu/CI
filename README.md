@@ -132,7 +132,7 @@ bigchoo@vmk1 1359 $ tree
   - jenkins is the one of automation tool that engineer can deploy job, run unit testing, etc.
 
 ##### Building rpm with [mock](http://fedoraproject.org/wiki/Projects/Mock)
-* 
+* download from this EPEL fedora, [link](http://dl.fedoraproject.org/pub/epel/6/x86_64/repoview/mock.html)
 
 ##### Start with jenkins
 ![jenkins](https://github.com/boonchu/CI/blob/master/components/jenkins.png)
