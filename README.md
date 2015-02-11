@@ -33,5 +33,35 @@ project, including configuration, build, internationalization, help files, etc.
 ```
 $ rpmbuild --define "_topdir rpmbuild" rpmbuild/SPECS/hello.spec
 ```
+* output example of directory structure
+```
+bigchoo@vmk1 1051 $ tree
+.
+└── rpmbuild
+    ├── BUILD
+    ├── BUILDROOT
+    ├── rpmbuild
+    │   ├── BUILD
+    │   ├── BUILDROOT
+    │   ├── RPMS
+    │   ├── SOURCES
+    │   ├── SPECS
+    │   └── SRPMS
+    ├── RPMS
+    ├── SOURCES
+    │   └── hello-2.8.tar.gz
+    ├── SPECS
+    │   ├── hello.spec
+    │   └── rpmbuild
+    │       ├── BUILD
+    │       ├── BUILDROOT
+    │       ├── RPMS
+    │       ├── SOURCES
+    │       ├── SPECS
+    │       └── SRPMS
+    └── SRPMS
+
+21 directories, 2 files
+```
 
 
