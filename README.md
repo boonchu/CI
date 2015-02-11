@@ -131,7 +131,10 @@ bigchoo@vmk1 1359 $ tree
   - any tool can help engineer to craft automation way to release bug fix?
   - jenkins is the one of automation tool that engineer can deploy job, run unit testing, etc.
 
-###### Start with jenkins
+##### Building rpm with [mock](http://fedoraproject.org/wiki/Projects/Mock)
+* 
+
+##### Start with jenkins
 ![jenkins](https://github.com/boonchu/CI/blob/master/components/jenkins.png)
 * suggestions:
   - Jenkins requires very good performance of hardware to run jobs on executors. It depends on demands of your user environments in your company. 
