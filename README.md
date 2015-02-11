@@ -167,6 +167,7 @@ $ tree /tmp/hello
 * install git plugins (Manage Jenkins -> Manage Plugins)
 * after running new job, here you go!
 ![jenkins-rpm-jobs](https://github.com/boonchu/CI/blob/master/components/jenkins-rpm-jobs.png)
+* think about the plan how to revision new package, test them before promoting to artifactory.
 
 ##### Start with artifactory
 * install JDK 7
