@@ -126,3 +126,9 @@ bigchoo@vmk1 1359 $ tree
 
 7 directories, 4 files
 ```
+* This is simulation action that engineer might think about why we do not go for automation process? 
+  - what happens tomorrow if Unix engineer plan to release bug fix edition for nginx for production?
+  - any tool can help engineer to craft automation way to release bug fix?
+  - jenkins is the one of automation tool that engineer can deploy job, run unit testing, etc.
+
+###### Start with jenkins
