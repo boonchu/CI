@@ -165,6 +165,8 @@ $ tree /tmp/hello
 * Suggestions:
   - Jenkins requires very good performance of hardware to run jobs on executors. It depends on demands of your user environments in your company. 
 * install git plugins (Manage Jenkins -> Manage Plugins)
+* after running new job, here you go!
+![jenkins-rpm-jobs](https://github.com/boonchu/CI/blob/master/components/jenkins-rpm-jobs.png)
 
 ##### Start with artifactory
 * install JDK 7
