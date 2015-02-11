@@ -6,7 +6,7 @@ Continueous Integration Process
 
 * install rpmdevtools and setup rpm folders
 ```
-sudo yum install rpmdevtools
+sudo yum install rpmdevtools rpmlint
 rpmdev-setuptree
 rsync -av ~/rpmbuild/* ~/CI/components/hello
 cd ~/CI/components
@@ -61,5 +61,57 @@ bigchoo@vmk1 1243 $ tree
 
 6 directories, 3 files
 ```
+* explore into next level to do this
+  - need to declare  the %files section. 
+  - Do not hardcode names like /usr/bin/, but use macros, like %{_bindir}/hello instead. 
+  - declared manual pages in the %doc subsection: %doc %{_mandir}/man1/hello.1.gz.
+  - delete the 'dir' file in %install: rm -f %{buildroot}/%{_infodir}/dir
+  - requires(post): info and Requires(preun): info
 
+```
+%prep
+%autosetup
 
+%build
+%configure
+make %{?_smp_mflags}
+
+%install
+%make_install
+%find_lang %{name}
+rm -f %{buildroot}/%{_infodir}/dir
+
+%post
+/sbin/install-info %{_infodir}/%{name}.info %{_infodir}/dir || :
+
+%preun
+if [ $1 = 0 ] ; then
+/sbin/install-info --delete %{_infodir}/%{name}.info %{_infodir}/dir || :
+fi
+
+%file -f %{name}.lang
+%doc AUTHORS ChangeLog COPYING NEWS README THANKS TODO
+%{_mandir}/man1/hello.1.gz
+%{_infodir}/%{name}.info.gz
+%{_bindir}/hello
+```
+* run rpmbuild and explore what we have in file tree
+  - part of macro in rpm 4.x, you need to turn off feature to avoid problem during the build process [ turn off the Fascist build polic](http://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch09s05s07.html)
+```
+$ sudo yum install gcc (dependency package by hello rpmbuild)
+$ rpmbuild --define "_topdir $HOME/CI/components/hello" --define "_unpackaged_files_terminate_build 0" -ba SPECS/hello.spec
+```
+* use rpmlint to inspect the output
+```
+$ rpmlint SPECS/hello.spec SRPMS/hello* RPMS/*/hello*
+SPECS/hello.spec:43: W: macro-in-comment %{_mandir}
+SPECS/hello.spec:44: W: macro-in-comment %{_infodir}
+SPECS/hello.spec:44: W: macro-in-comment %{name}
+SPECS/hello.spec:45: W: macro-in-comment %{_bindir}
+hello.src:43: W: macro-in-comment %{_mandir}
+hello.src:44: W: macro-in-comment %{_infodir}
+hello.src:44: W: macro-in-comment %{name}
+hello.src:45: W: macro-in-comment %{_bindir}
+hello-debuginfo.x86_64: W: only-non-binary-in-usr-lib
+2 packages and 1 specfiles checked; 0 errors, 9 warnings.
+```
