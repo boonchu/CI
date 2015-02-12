@@ -197,3 +197,9 @@ $ tail -f /var/opt/jfrog/artifactory/logs/artifactory.log
 ```
 * access from web service http://localhost:8081/ (login:admin, pass:password)
 * update: free trail version is not quite usable. Many good add on features are off such as YUM, docker, PyPI, LDAP. :-(
+* Okie. Alternatively, JFrog offers the open source platform for YUM repository. So, I pushed hello world package to the platform and register with yum config manager. (see example: [sbt](https://bintray.com/sbt/rpm/sbt/view))
+```
+$ sudo yum-config-manager --enable --add-repo=https://bintray.com/boonchu/yum-remote-repo
+$ sudo yum search hello-world
+```
+* 
