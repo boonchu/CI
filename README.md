@@ -177,7 +177,7 @@ $ tree /tmp/hello
 
 ##### Start with artifactory repository
 * install JDK 7
-* download free trail version from artifactory site and install it.
+* [download free trail version](https://bintray.com/jfrog/artifactory-rpms/artifactory/view) from artifactory site and install it. 
 ```
 $ sudo systemctl start artifactory 
 $ sudo systemctl enable artifactory
