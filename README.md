@@ -195,4 +195,4 @@ $ tail -f /var/opt/jfrog/artifactory/logs/artifactory.log
 ### Artifactory successfully started (18.060 seconds)   ###
 ###########################################################
 ```
-* access from web service http://localhost:8081/
+* access from web service http://localhost:8081/ (login:admin, pass:password)
