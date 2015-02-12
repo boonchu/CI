@@ -200,5 +200,5 @@ $ tail -f /var/opt/jfrog/artifactory/logs/artifactory.log
 * Okie. Alternatively, JFrog offers the open source platform for YUM repository. So, I pushed hello world package to the platform and register with yum config manager. (see example: [sbt](https://bintray.com/sbt/rpm/sbt/view))
 ```
 $ cd /etc/yum.repos.d/ && sudo wget https://bintray.com/boonchu/yum-remote-repo/rpm -O bintray-boonchu-yum-remote-repo.repo 
-$ sudo yum search hello-world
+$ sudo yum search hello
 ```
