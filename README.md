@@ -168,6 +168,12 @@ $ tree /tmp/hello
 * after running new job, here you go!
 ![jenkins-rpm-jobs](https://github.com/boonchu/CI/blob/master/components/jenkins-rpm-jobs.png)
 * think about the plan how to revision new package, test them before promoting to artifactory.
+* adding executor capacity for rpm rhel 7 build and test
+  - plan out and procure with good hardware
+  - of course, you need to kickstart new nodes
+  - update ssh keys between master jenkins to executors
+  - defines the workspace for jobs
+![jenkins-executors](https://github.com/boonchu/CI/blob/master/components/jenkins-executors.png)
 
 ##### Start with artifactory
 * install JDK 7
