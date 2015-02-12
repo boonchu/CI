@@ -177,7 +177,7 @@ $ tree /tmp/hello
 
 ##### Start with artifactory repository
 * install JDK 7
-* [download free trail version](https://bintray.com/jfrog/artifactory-rpms/artifactory/view) from artifactory site and install it. 
+* [download open source version](https://bintray.com/jfrog/artifactory-rpms/artifactory/view) from artifactory site and install it. 
 ```
 $ sudo systemctl start artifactory 
 $ sudo systemctl enable artifactory
@@ -199,6 +199,7 @@ $ tail -f /var/opt/jfrog/artifactory/logs/artifactory.log
 * update: free trail version is not quite usable. Many good add on features are off such as YUM, docker, PyPI, LDAP. :-(
 * Okie. Alternatively, JFrog offers the open source platform for YUM repository. So, I pushed hello world package to the platform and register with yum config manager. (see example: [sbt](https://bintray.com/sbt/rpm/sbt/view))
 * this is my open source repository from bintray.com, [link](https://bintray.com/boonchu/yum-remote-repo)
+* May be... you can try [30 days free trail version with registration](https://www.jfrog.com/artifactory/free-trial/)
 ```
 $ cd /etc/yum.repos.d/ && sudo wget https://bintray.com/boonchu/yum-remote-repo/rpm -O bintray-boonchu-yum-remote-repo.repo 
 $ sudo yum search hello
