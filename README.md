@@ -196,3 +196,4 @@ $ tail -f /var/opt/jfrog/artifactory/logs/artifactory.log
 ###########################################################
 ```
 * access from web service http://localhost:8081/ (login:admin, pass:password)
+* update: free trail version is not quite usable. Many good add on features are off such as YUM, docker, PyPI, LDAP. :-(
