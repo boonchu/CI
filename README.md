@@ -202,4 +202,3 @@ $ tail -f /var/opt/jfrog/artifactory/logs/artifactory.log
 $ sudo yum-config-manager --enable --add-repo=https://bintray.com/boonchu/yum-remote-repo
 $ sudo yum search hello-world
 ```
-* 
