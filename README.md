@@ -175,7 +175,7 @@ $ tree /tmp/hello
   - defines the workspace for jobs
 ![jenkins-executors](https://github.com/boonchu/CI/blob/master/components/jenkins-executors.png)
 
-##### Start with artifactory
+##### Start with artifactory repository
 * install JDK 7
 * download free trail version from artifactory site and install it.
 ```
