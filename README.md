@@ -238,3 +238,6 @@ local-repo/
 ##### Pull rpm to bundle in Docker image
 
 ##### Use Chef to push rpm to nodes
+
+# CD
+* [checkout the topic](http://continuousdelivery.com/2014/02/visualizations-of-continuous-delivery/)
