@@ -176,6 +176,9 @@ $ tree /tmp/hello
 ![jenkins-executors](https://github.com/boonchu/CI/blob/master/components/jenkins-executors.png)
 
 ##### Testing hello package before tagging new release
+* create new testing job from jenkins
+* if result looks good, tags it 
+* pushing artifacts to yum repository on artifactory platform service
 
 ##### Start with artifactory repository
 * install JDK 7
