@@ -236,4 +236,4 @@ local-repo/
 ```
 ##### Pull rpm to bundle in Docker image
 
-##### Use Chef to provision rpm
+##### Use Chef to push rpm to nodes
