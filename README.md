@@ -1,6 +1,6 @@
 # CI
 #### Continueous Integration Process
-* rpmbuild tools, jenkins, artifactory
+* This use case requires; rpmbuild tools, jenkins, artifactory
 
 ##### Start with component rpm build
 * Use [hello world rpm as the example](https://fedoraproject.org/wiki/How_to_create_a_GNU_Hello_RPM_package)
