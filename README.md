@@ -205,6 +205,30 @@ $ sudo yum search hello
 ```
 * You also can try [30 days free trail version with registration](https://www.jfrog.com/artifactory/free-trial/)
 
+##### Deploy rpm to artifactory
+* notice when artifactory replicate the same process like what createrepo does.
+```
+mkdir local-repo
+bigchoo@server1-eth0 1279 \> createrepo local-repo/
+Saving Primary metadata
+Saving file lists metadata
+Saving other metadata
+Generating sqlite DBs
+Sqlite DBs complete
+[12:25 Tue Feb 17] ~
+bigchoo@server1-eth0 1280 \> tree local-repo/
+local-repo/
+└── repodata
+    ├── 01a3b489a465bcac22a43492163df43451dc6ce47d27f66de289756b91635523-filelists.sqlite.bz2
+    ├── 401dc19bda88c82c403423fb835844d64345f7e95f5b9835888189c03834cc93-filelists.xml.gz
+    ├── 5dc1e6e73c84803f059bb3065e684e56adfc289a7e398946574d79dac6643945-primary.sqlite.bz2
+    ├── 6bf9672d0862e8ef8b8ff05a2fd0208a922b1f5978e6589d87944c88259cb670-other.xml.gz
+    ├── 7c36572015e075add2b38b900837bcdbb8a504130ddff49b2351a7fc0affa3d4-other.sqlite.bz2
+    ├── dabe2ce5481d23de1f4f52bdcfee0f9af98316c9e0de2ce8123adeefa0dd08b9-primary.xml.gz
+    └── repomd.xml
+
+1 directory, 7 files
+```
 ##### Pull rpm to bundle in Docker image
 
 ##### Use Chef to provision rpm
