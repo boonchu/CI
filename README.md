@@ -177,6 +177,7 @@ $ tree /tmp/hello
 
 ##### Testing hello package before tagging new release
 * create new testing job from jenkins
+* assume rpm is part of full software stack
 * if result looks good, tags it 
 * pushing artifacts to yum repository on artifactory platform service
 
