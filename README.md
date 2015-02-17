@@ -204,3 +204,7 @@ $ cd /etc/yum.repos.d/ && sudo wget https://bintray.com/boonchu/yum-remote-repo/
 $ sudo yum search hello
 ```
 * You also can try [30 days free trail version with registration](https://www.jfrog.com/artifactory/free-trial/)
+
+##### Pull rpm to bundle in Docker image
+
+##### Use Chef to provision rpm
