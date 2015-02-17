@@ -175,6 +175,8 @@ $ tree /tmp/hello
   - defines the workspace for jobs
 ![jenkins-executors](https://github.com/boonchu/CI/blob/master/components/jenkins-executors.png)
 
+##### Testing hello package before tagging new release
+
 ##### Start with artifactory repository
 * install JDK 7
 * [download open source version](https://bintray.com/jfrog/artifactory-rpms/artifactory/view) from artifactory site and install it. 
