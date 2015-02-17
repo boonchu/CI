@@ -175,14 +175,13 @@ $ tree /tmp/hello
   - defines the workspace for jobs
 ![jenkins-executors](https://github.com/boonchu/CI/blob/master/components/jenkins-executors.png)
 
-##### Testing hello package before tagging new release
-* create new testing job from jenkins
-* assume rpm is part of full software stack
-* if result looks good, tags it 
-* pushing artifacts to yum repository on artifactory platform service
+##### Testing hello package (your artifacts) before tagging new release
+* When latest build pacakge pass from the test job, it's time to tag and promote it.
+* Pushing rpm to be available at yum repository (using artifactory)
+* Making annoucement to public community users when you release new version.
 
-##### Start with artifactory repository
-* install JDK 7
+##### Start with artifactory 
+* Install Oracle JDK 7
 * [download open source version](https://bintray.com/jfrog/artifactory-rpms/artifactory/view) from artifactory site and install it. 
 ```
 $ sudo systemctl start artifactory 
@@ -238,6 +237,11 @@ local-repo/
 ##### Pull rpm to bundle in Docker image
 
 ##### Use Chef to push rpm to nodes
+
+##### Testing Testing Testing
+* create new testing job from jenkins
+* assume rpm is part of full software stack
+* if result looks good, tags software stack due to latest rpm
 
 # CD
 * [Visualizations of Continuous Delivery](http://continuousdelivery.com/2014/02/visualizations-of-continuous-delivery/)
