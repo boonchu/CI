@@ -207,7 +207,7 @@ $ sudo yum search hello
 ```
 * You also can try [30 days free trail version with registration](https://www.jfrog.com/artifactory/free-trial/)
 
-##### Deploy rpm to artifactory
+##### Deploy rpm (as artifacts) to artifactory with REST API
 * notice when artifactory replicate the same process like what createrepo does.
 ```
 mkdir local-repo
