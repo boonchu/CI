@@ -246,3 +246,6 @@ local-repo/
 # CD
 * [Visualizations of Continuous Delivery](http://continuousdelivery.com/2014/02/visualizations-of-continuous-delivery/)
 * [Jenkins deployment in the clouds](https://blog.codecentric.de/en/2015/02/jenkins-deployment-dashboard-ec2-environments/)
+
+# Reference
+* [Git pulling and artifect in Nexus](http://blog.arungupta.me/jenkins-nexus-git-polling/)
